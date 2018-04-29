@@ -40,3 +40,4 @@ TODO: add automatic updates when new release posted
 
 Other tools installed on VSTS image are listed:
 [vsts agent tools](https://github.com/Microsoft/vsts-agent-docker/blob/6689c2bd45304ec56d2628f393355b52a451453e/README.md#standard-images)
+
