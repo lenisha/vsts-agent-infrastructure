@@ -3,8 +3,17 @@ resource "azurerm_resource_group" "aci-rg" {
   location = "westus2"
 }
 
+resource "random_id" "randomId" {
+  keepers = {
+    # Generate a new ID only when a new resource group is defined
+    resource_group = "${azurerm_resource_group.aci-rg.name}"
+  }
+
+  byte_length = 8
+}
+
 resource "azurerm_storage_account" "aci-sa" {
-  name                = "${var.storage-account-name}"
+  name                = "aciagentstorage${random_id.randomId.hex}"
   resource_group_name = "${azurerm_resource_group.aci-rg.name}"
   location            = "${azurerm_resource_group.aci-rg.location}"
   account_tier        = "Standard"
