@@ -13,3 +13,6 @@ variable "vsts-agent" {
 variable "vsts-pool" {
   default = "ACI-Pool"
 }
+
+variable "storage-account-name" {
+}
