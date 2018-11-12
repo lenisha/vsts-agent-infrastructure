@@ -7,8 +7,8 @@ LABEL org.label-schema.name="VSTS Agent with Infrastrucure Tools" \
     org.label-schema.vcs-url="https://github.com/lenisha/vsts-agent-infrastructure" \
     org.label-schema.schema-version="1.0"
                 
-ENV TERRAFORM_VERSION 0.11.7
-ENV PACKER_VERSION 1.2.3
+ENV TERRAFORM_VERSION 0.11.10
+ENV PACKER_VERSION 1.3.2
 ENV ANSIBLE_VERSION 2.0.0.2
 
 # Install Packer
