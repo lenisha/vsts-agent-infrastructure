@@ -35,3 +35,6 @@ RUN  echo "===> Installing Ansible..." \
  && mkdir -p /etc/ansible                       \
  && echo 'localhost' > /etc/ansible/hosts
 
+# Install dos2unix
+RUN  echo "===> Installing dos2unix..." \
+ && apt-get install -y dos2unix
