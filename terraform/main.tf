@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "aci-rg" {
   name     = "aci-vsts"
-  location = "westus2"
+  location = "centralus"
 }
 
 resource "random_id" "randomId" {
@@ -43,11 +43,11 @@ resource "azurerm_container_group" "aci-vsts" {
     memory = "1.5"
     port   = "80"
 
-    environment_variables {
-      "VSTS_ACCOUNT" = "${var.vsts-account}"
-      "VSTS_TOKEN"   = "${var.vsts-token}"
-      "VSTS_AGENT"   = "${var.vsts-agent}"
-      "VSTS_POOL"    = "${var.vsts-pool}"
+    environment_variables = {
+      VSTS_ACCOUNT = "${var.vsts-account}"
+      VSTS_TOKEN   = "${var.vsts-token}"
+      VSTS_AGENT   = "${var.vsts-agent}"
+      VSTS_POOL    = "${var.vsts-pool}"
     }
 
     volume {
@@ -61,7 +61,7 @@ resource "azurerm_container_group" "aci-vsts" {
     }
   }
 
-  tags {
+  tags = {
     environment = "testing"
   }
 }
