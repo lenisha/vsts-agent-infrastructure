@@ -1,5 +1,5 @@
 variable "vsts-account" {
-  default = "eneros"
+  default = ""
 }
 
 variable "vsts-token" {
